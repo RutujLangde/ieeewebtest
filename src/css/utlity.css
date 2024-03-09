@@ -1,0 +1,7 @@
+section {
+    display: block;
+    min-height: 100vh;
+    max-height: fit-content;
+    position: relative;
+    width: 100vw;
+}
