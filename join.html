@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Member</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #0083b0;
+        }
+
+        input[type="submit"] {
+            background-color: #0083b0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005e7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Become a Member of IEEE CS GHRCE</h1>
+        <form id="auth-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" id="submit-btn" value="Sign Up">
+            <p id="error-message" style="color: red;"></p>
+            <p>Already a member? <a href="#" id="toggle-auth">Sign In</a></p>
+        </form>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB6YFhPuZVjomXxZ5caEi6guOfxLGUKE1A",
+            authDomain: "authentication-supp.firebaseapp.com",
+            databaseURL: "https://authentication-supp-default-rtdb.firebaseio.com",
+            projectId: "authentication-supp",
+            storageBucket: "authentication-supp.appspot.com",
+            messagingSenderId: "964909601619",
+            appId: "1:964909601619:web:b8331fd43b46f21e9c87a6"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // Get a reference to the Firebase authentication service
+        const auth = getAuth();
+
+        // Form submission event listener
+        document.getElementById("auth-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const submitBtn = document.getElementById("submit-btn");
+            submitBtn.disabled = true; // Disable submit button during authentication process
+
+            // Check if the user is signing up or signing in
+            const isSignUp = submitBtn.value === "Sign Up";
+
+            // Perform sign-up or sign-in based on user's choice
+            if (isSignUp) {
+                // Sign up
+                createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed up successfully
+                    console.log("User signed up successfully:", userCredential.user);
+                    window.location.href = "benefit.html"; // Redirect to the benefit page
+                })
+                .catch((error) => {
+                    // Handle sign-up errors
+                    console.error("Error signing up user:", error.message);
+                    document.getElementById("error-message").textContent = error.message;
+                    submitBtn.disabled = false; // Enable submit button after error
+                });
+            } else {
+                // Sign in
+                signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in successfully
+                    console.log("User signed in successfully:", userCredential.user);
+                    window.location.href = "benefit.html"; // Redirect to the benefit page
+                })
+                .catch((error) => {
+                    // Handle sign-in errors
+                    console.error("Error signing in:", error.message);
+                    document.getElementById("error-message").textContent = error.message;
+                    submitBtn.disabled = false; // Enable submit button after error
+                });
+            }
+        });
+
+        // Toggle between sign-up and sign-in
+        document.getElementById("toggle-auth").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            const submitBtn = document.getElementById("submit-btn");
+            const toggleAuth = document.getElementById("toggle-auth");
+
+            // Toggle the button text and form behavior
+            if (submitBtn.value === "Sign Up") {
+                submitBtn.value = "Sign In";
+                toggleAuth.textContent = "Sign Up";
+            } else {
+                submitBtn.value = "Sign Up";
+                toggleAuth.textContent = "Sign In";
+            }
+
+            // Clear any error messages
+            document.getElementById("error-message").textContent = "";
+        });
+    </script>
+</body>
+</html>
