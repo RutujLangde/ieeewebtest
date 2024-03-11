@@ -21,6 +21,7 @@
 
 .nav-header{
     color: #FFF3E1;
+    font-family: "Unbounded", sans-serif;
     display: flex;
     text-decoration: none;
     list-style: none;
@@ -35,8 +36,8 @@
 .hamburger-menu{
     height: 25px;
     width: 25px;
-    display: none;
-    margin-right: 1.5rem ;
+    
+    margin-right: 3rem ;
 }
 
 
