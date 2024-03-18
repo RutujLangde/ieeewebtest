@@ -34,14 +34,12 @@
     align-items: center;
     text-align: center;
     line-height: 1;
-    /* letter-spacing: .1em; */
     padding-top: 3vh;
     width: 82vw;
     color: rgb(255, 255, 255);
-    font-family: "Special Elite", system-ui;
-    font-weight: 400;
+    font-family: "Courier Prime", monospace;
+    font-weight: 800;
     font-style: normal;
-    font-size: 2rem;
 }
 
 @media screen and (max-width: 1028px) {

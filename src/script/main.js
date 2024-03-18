@@ -37,3 +37,14 @@ function typewriter()
 
 
 typewriter();
+
+
+function toggleMenu() {
+    var menuToggle = document.querySelector('.menu-toggle');
+    var menuSection = document.querySelector('.menu-section');
+    var navLinks = document.querySelector('nav ul');
+
+    menuToggle.classList.toggle('on');
+    menuSection.classList.toggle('on');
+    navLinks.classList.toggle('hidden');
+}
