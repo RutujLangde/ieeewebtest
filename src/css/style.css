@@ -86,5 +86,5 @@ nav ul a:hover {
     height: 100%;
     display: block;
     background-color: rgb(4, 103, 233);
-    position: absolute;
+    position: fixed;
 }
