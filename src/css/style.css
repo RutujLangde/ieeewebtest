@@ -69,7 +69,7 @@ nav ul.hidden {
 nav ul a {
     transition-duration: 0.5s;
     text-decoration: none;
-    color: white;
+    color: ;
     font-size: 3em;
     line-height: 1.5;
     width: 100%;
@@ -85,6 +85,6 @@ nav ul a:hover {
     width: 100%;
     height: 100%;
     display: block;
-    background-color: rgb(4, 103, 233);
+    background-color: black;
     position: fixed;
 }
