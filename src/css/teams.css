@@ -18,58 +18,62 @@
 
 
 .container {
-  
-    display: flex;
-    width: 1000vw;
+  display: flex;
+  width: 300vw;
 
-    .col {
-        display: flex;
-        gap: 3em;
-        
-        p {
-            font-size: .8rem;
-        }
-    }
 
-    section {
-        width:60vw;
-        padding: 20vw 10vw;
+  .col {
+      display: flex;
+      gap: 3em;
+      
+      p {
+          font-size: .8rem;
+      }
+  }
 
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
+  section {
+      width: 100vw;
+      padding: 15vh 0vw;
+      margin: 0px;
+      /* left: 5vw; */
 
-        p {
-            font-size: 1.2rem;
-            width: 50vw;
-        }
+      h1 {
+          font-size: 3rem;
+          margin: 0;
+      }
 
-        ul {
-            list-style-type: none;
-            display: flex;
-            gap: 3em;
-            width: 100%;
-            height: 300px;
-            padding: 0;
+      p {
+          font-size: 1.2rem;
+          width: 50vw;
+      }
 
-            li {
-                background: white;
-                border-radius: .3em;
-                flex-grow: 1;
-            }
-        }
+      ul {
+          list-style-type: none;
+          display: flex;
+          gap: 3em;
+          width: 100%;
+          height: 300px;
+          padding: 0;
 
-    }
+          li {
+              background: white;
+              border-radius: .3em;
+              flex-grow: 1;
+          }
+      }
+
+  }
 }
 
 section {
-    height: 100vh;
+  height: 100vh;
+
 }
 
 .team{
-  width: 100vw;
-  padding-top: 10vh;
+  width: 65vw;
+  
+  padding: 20vh 0vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,89 +81,61 @@ section {
   font-weight: 800;
   font-size: 5rem;
   letter-spacing: .05em;
-  transform: translate(-15vw);
+  /* transform: translate(-12vw); */
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 
-#card {
-  overflow:hidden;
-  text-align:center;
-  width:320px;
-  height:535px;
-  background: 
-  url(http://www.riccardotartaglia.it/img/nature.jpg);
-  background-size:cover;
-  background-position:center center;
-  position:absolute;
-  top:0; left:0; right:0; bottom:0;
-  margin:auto;
-  box-shadow: 
-    0px 30px 30px -20px rgba(0,0,0,1), 
-    inset 0 0 0 1000px rgba(67,52,109,.6);
-  transition: all .4s cubic-bezier(.37,.26,.35,1)
-}
-#card:hover { 
-  box-shadow: 
-    0px 30px 30px -20px rgba(0,0,0,.9), 
-    inset 0 0 0 1000px rgba(67,52,109,.2);
-}
-#card:hover #avatar {
-  animation:none;
-  box-shadow:0;
-  width:200px; 
-  height:200px;
+
+.card{
+  background-color: white;
+  border: 4px solid black;
+  padding: .75rem;
+  
+  border-radius: .375rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  width: 450px;
+  margin: .5rem;
+  width: 100%;
 }
 
-#card:hover #profile{
-  opacity:1;
-  bottom:0;
-}
-#profile {
-  transition: all .5s cubic-bezier(.37,.26,.35,1);
-  opacity:0;
-  position:absolute; 
-  bottom:20px; 
-  width:100%;
-}
-#profile h1 {
-  color:#fff;
-  padding:0;
-  margin:0;
+.cardimage{
+ 
+  border-radius: .375rem;
+  width: 100%;
+  border: 2px solid black;
 }
 
-#profile h3 {
-  color:#aaa;
-  padding:0;
-  margin:5px 0 40px 0; 
-  font-size:.9em
+.aspectsqure{
+  width: 100%;
+  overflow: hidden;
 }
-#avatar {
-  transition: all .4s cubic-bezier(.37,.26,.35,1);
-  animation: circleAn 4s infinite;
-  width:150px; height:150px;
-  position:absolute;
-  top:0; left:0; right:0; bottom:0;
-  margin:auto;
-  background:url(https://randomuser.me/api/portraits/men/99.jpg);
-  background-size:cover;
-  background-position:center center;
-  border-radius:100%;
-  box-shadow:0px 30px 30px -25px rgba(0,0,0,0.6);
+
+.cardimg{
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  vertical-align: middle;
 }
-@keyframes circleAn {
-  0%   { 
-    box-shadow:
-      0px 30px 30px -25px rgba(0,0,0,0.6), 
-      0px 0px 0px 0px rgba(102,52,105,1), 
-      0px 0px 0px 0px rgba(102,52,105,.7),
-      0px 0px 0px 0px rgba(102,52,105,.5);
-  }
- 100% { 
-   box-shadow:
-     0px 30px 30px -25px rgba(0,0,0,0.6), 
-     0px 0px 0px 70px rgba(102,52,105,0),
-     0px 0px 0px 200px rgba(102,52,105,0),
-     0px 0px 0px 300px rgba(102,52,105,0);
-  }
-}
+
+
+@media (max-width: 600px) {
+  .team{
+    width: 100vw;
+    padding:0;
+    margin-right: 20px;
+    margin-left: -10px;
+    }
+    .container{
+      display: flex;
+  width: 300vw;
+      section{
+        padding: 25vh 0vw;
+      }
+    }
+} 
+
+

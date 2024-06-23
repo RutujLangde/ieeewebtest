@@ -125,4 +125,31 @@
     width: 100%;
     height: 444px;
     margin: 2px;
+    
 }
+.dishide{
+    display:block;
+}
+
+
+@media (max-width: 600px) {
+    .event1{
+        flex-direction: column;
+      }
+    .event2{
+        flex-direction: column;
+      }
+    .event3{
+        flex-direction: column;
+      }
+    .event4{
+        flex-direction: column;
+      }
+      .eventimg{
+        height: 300px;
+      }
+      .dishide{
+        display: none;
+      }
+      
+  } 

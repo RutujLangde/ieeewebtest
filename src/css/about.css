@@ -14,7 +14,8 @@
 
     section {
         width: 100vw;
-        padding: 20vw 10vw;
+        height: 80vh;
+        padding: 20vw 7.5vw;
 
         h1 {
             font-size: 3rem;
@@ -43,3 +44,36 @@
 
     }
 }
+
+.aboutbackground{
+    height: 85vh; 
+    width: 100%; 
+    background-color: transparent; 
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.97); margin-top: 10vh;
+}
+
+/* .rowdir{
+    flex-direction: row;
+} */
+
+/* @media (max-width: 600px) {
+    .rowdir{
+        flex-direction: row;
+    }
+  } */
+
+  .displaydir{
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media (max-width: 600px) {
+    .displaydir{
+        flex-direction: column;
+      }
+  } 
