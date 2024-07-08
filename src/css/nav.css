@@ -137,5 +137,13 @@ nav ul a:hover {
     }
     
 }
+@media (max-width: 785px) {
+    
+    .logo1-head{
+        width: 43vw;
+        height: 8vh;
+        margin: 0 2rem;
+    }
+}
 
 
