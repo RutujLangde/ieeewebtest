@@ -16,7 +16,7 @@
 .logo1-head{
     height: 4.5rem;
     width: 15rem;
-    margin: 0 2rem;
+    margin: 0 1rem;
 }
 
 .nav-header{
@@ -142,7 +142,7 @@ nav ul a:hover {
     .logo1-head{
         width: 43vw;
         height: 8vh;
-        margin: 0 2rem;
+        margin: 0 1rem;
     }
 }
 
