@@ -21,7 +21,7 @@ body {
 
 .creative-testimonial--slider{
     background-image: linear-gradient(to bottom, #f7f7ff, #f4f4fb, #f8f7fc, #fbfbfe, #ffffff);
-    padding: 50px 0px;
+    padding: 150px 0px;
 }
 .creative-testimonial--slider .testimonial-inner {
     max-width: 1240px;
@@ -178,7 +178,7 @@ body {
 }
 }
 /* Responsive Ipad */
-@media only screen and (max-width: 460px) {
+@media (max-width: 600px) {
     .testimonial-inner .testimonial-heading{
         font-size: 1.813rem;
         line-height: 2.125rem;
@@ -196,4 +196,7 @@ body {
         margin-bottom: 20px;
                 width: 100%;
     }
-}
+    .swiper-slide--inner{
+        flex-direction: column;
+    }
+    }
