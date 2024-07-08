@@ -1,28 +1,18 @@
-jQuery(document).ready(function($) {
-    "use strict";
-    //  TESTIMONIALS CAROUSEL HOOK
-    $('#customers-testimonials').owlCarousel({
-        loop: true,
-        center: true,
-        items: 3,
-        margin: 0,
-        autoplay: true,
-        dots:true,
-        autoplayTimeout: 8500,
-        smartSpeed: 450,
-        responsive: {
-          0: {
-            items: 1
-          },
-          768: {
-            items: 2
-          },
-          1170: {
-            items: 3
-          }
-        }
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+      },
+      keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+      },
+      navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+      },
+      effect: 'slide',
+  });
 });
-
-console.log('jQuery version:', jQuery.fn.jquery);
-console.log('Owl Carousel is available:', typeof $.fn.owlCarousel !== 'undefined');
